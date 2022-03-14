@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from re import T
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-=dv$cbj13$u)!u2w4!=v)0qv(y_@4(9_tbtqu$rb9p&c+1j)k)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','6c4d-125-63-120-30.ngrok.io']
+ALLOWED_HOSTS = ['dashboard.heroku.com/apps/ttr-test-api', 'localhost','6c4d-125-63-120-30.ngrok.io']
 
 
 # Application definition
@@ -123,6 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+STATIC_ROOT = os.path.join('staticfiles')
 STATIC_URL = 'static/'
 
 CORS_ALLOW_ALL_ORIGINS = True
